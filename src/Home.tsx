@@ -5,9 +5,6 @@ export default function Home({foods, setFoods, days, setDays}: {foods: Food[], s
     const [todaysIntake, setTodayIntake] = useState<Day|null>(null)
 
     const [name, setName] = useState('')
-    const day: Day = {macros: {fat: 20, kcal: 200, protein: 20, sugar: 20},meals: [{unixTimestamp: 1754431300000, foods: [{amount: 2, unit: 'g', macros: {fat: 20, kcal: 200, protein: 20, sugar: 20}, name: "szenya"}]}],unixTimestamp: 1754431200000}
-    // [{name: "szenya", amount: 1, unit: "g", macros: {kcal: 100, fat: 10, protein: 10, sugar: 10}}]  1754431200000
-    const x: Day[] = [{macros: {fat: 20, kcal: 200, protein: 20, sugar: 20},meals: [{unixTimestamp: 1754431300000, foods: [{amount: 2, unit: 'g', macros: {fat: 20, kcal: 200, protein: 20, sugar: 20}, name: "szenya"}]}],unixTimestamp: 1754431200000}]
     useEffect(() => {
         const now = new Date()
         const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()
