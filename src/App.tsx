@@ -28,10 +28,12 @@ function App() {
     localStorage.setItem('days', JSON.stringify(days))
   }, [days])
 
-  return <BrowserRouter>
+  return (
+  <BrowserRouter>
     <Routes>
       <Route path='*' element={<Home setFoods={setFoods} foods={foods ?? []} days={days ?? []} setDays={setDays}/>}/>
     </Routes>
   </BrowserRouter>
+  )
 }
 export default App
