@@ -1,5 +1,6 @@
 import { useEffect, useState, type Dispatch } from "react"
 import type { Day, Food, Macros } from "./types"
+import TodaysIntake from "./Home/TodaysIntake"
 
 export default function Home({foods, setFoods, days, setDays}: {foods: Food[], setFoods: Dispatch<typeof foods>, days: Day[], setDays: Dispatch<typeof days>}) {
     const [todaysIntake, setTodayIntake] = useState<Day|null>(null)
@@ -104,13 +105,7 @@ export default function Home({foods, setFoods, days, setDays}: {foods: Food[], s
     
     return (
         <div className="page-container">
-            <div className="home-today">
-                <h1>Today</h1>
-                <span>Energy: {todaysIntake.macros.kcal}kcal</span>
-                <span>Carbs: {todaysIntake.macros.sugar}g</span>
-                <span>Protein: {todaysIntake.macros.protein}g</span>
-                <span>Fat: {todaysIntake.macros.fat}g</span>
-            </div>
+            <TodaysIntake today={todaysIntake} target={{fat: 50, protein: 100, sugar: 120, kcal: 2000}}/>
             <div className="home-today">
                 <h1>Foods</h1>
                 <span>Name: <input type="text" value={name} onChange={(event) => setName(event.target.value)}/></span>

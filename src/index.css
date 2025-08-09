@@ -12,14 +12,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary: #000;
   --secondary: #aaa;
-  --border-radius: .125em;
+  --border-radius: .125em ;
+
+  --primary-color: rgb(20, 118, 188);
+  --warning: rgb(218, 116, 8);
 }
 
 *{
   -webkit-user-drag: none;
   user-select: none;
+  box-sizing: border-box;
 }
 
 body {
@@ -79,6 +82,34 @@ body {
 .intake-macros {
   display: flex;
   flex-direction: column;
+}
+
+.today-progress {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.today-progress-bar {
+  width: 90%;
+  height: 1rem;
+  background-color: wheat;
+  border-radius: 500rem;
+  margin: auto;
+}
+
+.today-progress-bar-fill {
+  border-radius: 500rem;
+  height: 100%;
+}
+.today-progress-macros {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 
